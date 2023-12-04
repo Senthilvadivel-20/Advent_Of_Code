@@ -6,7 +6,8 @@
 txt: read0 `:./inputs/Day_1_Trebuchet.txt
 
 // Check the first appearance of number in front and back order
-check_num:{:((x(x in .Q.n)?1b),((reverse x)((reverse x) in .Q.n)?1b))}
+/check_num:{:((x(x in .Q.n)?1b),((reverse x)((reverse x) in .Q.n)?1b))}
+check_num:{(first;last)@\:(x inter .Q.n)}
 
 // Answer for 1st question : What is the sum of all of the calibration values?
 show sum("J"$check_num'[txt])
@@ -21,6 +22,11 @@ txt2num:{ssr/[x;digits;replace]}
 
 show sum("J"$check_num'[txt2num'[txt]])
 
+
+/
+54450
+54265
+\
 
 
 
